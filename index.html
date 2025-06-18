@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harsh Kapadiya - Full Stack Developer & Designer | Portfolio</title>
+  <meta name="description" content="Passionate web developer and designer specializing in modern web applications. Computer Science student at NIT Patna with expertise in C++, JavaScript, HTML/CSS, and UI/UX design.">
+  
+  <meta property="og:title" content="Harsh Kapadiya - Full Stack Developer & Designer">
+  <meta property="og:description" content="Passionate web developer and designer specializing in modern web applications. View my portfolio and projects.">
+  <meta property="og:type" content="website">
+  <!-- <meta property="og:url" content=""> -->
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-HH0aEqz+2iF13TbHl8a3ZrxR0VzFwMRBeTDVK7bZyOwCRhdUZugL1v99nlcAfCzTRX0bZ8jcgNj6xBfsSzoZtQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="#home" class="logo-link">
+          <span class="logo-text">HK</span>
+        </a>
+      </div>
+      
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="#home" class="nav-link active" data-section="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link" data-section="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </li>
+      </ul>
+      
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">Loading...</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="greeting">Hello!</span>
+              <br>
+              <span class="name">I am <span class="highlight">Harsh</span></span>
+            </h1>
+            <h2 class="hero-subtitle">
+              I am a <span class="animated-role" id="animated-role"></span>
+            </h2>
+            <p class="hero-description">
+              Transforming creative ideas into digital reality with modern web technologies and thoughtful design.
+            </p>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary">
+                <i class="fas fa-envelope"></i>
+                Get in Touch
+              </a>
+              <a href="#projects" class="btn btn-secondary">
+                <i class="fas fa-code"></i>
+                View Work
+              </a>
+            </div>
+          </div>
+          
+          <div class="hero-visual">
+            <div class="hero-avatar">
+              <div class="avatar-circle">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="floating-elements">
+                <div class="floating-icon" style="--delay: 0s">
+                  <i class="fab fa-js-square"></i>
+                </div>
+                <div class="floating-icon" style="--delay: 0.5s">
+                  <i class="fab fa-react"></i>
+                </div>
+                <div class="floating-icon" style="--delay: 1s">
+                  <i class="fab fa-css3-alt"></i>
+                </div>
+                <div class="floating-icon" style="--delay: 1.5s">
+                  <i class="fab fa-html5"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="scroll-indicator">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span class="scroll-text">Scroll to explore</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <div class="section-line"></div>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-description">
+              I am a passionate web developer and designer who loves transforming creative ideas into digital reality. 
+              With a solid foundation in Computer Science Engineering from NIT Patna, I blend technical knowledge 
+              with design thinking to build aesthetic and functional experiences.
+            </p>
+            
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="2">0</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Technologies</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-visual">
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Development</h3>
+              <p>Building responsive and interactive web applications using modern technologies.</p>
+            </div>
+            
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-palette"></i>
+              </div>
+              <h3>Design</h3>
+              <p>Creating beautiful and intuitive user interfaces with attention to detail.</p>
+            </div>
+            
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3>Innovation</h3>
+              <p>Always exploring new technologies and creative solutions to problems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Education Section -->
+    <section class="skills-education section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Skills & Education</h2>
+          <div class="section-line"></div>
+        </div>
+        
+        <div class="tabs-container">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="skills">
+              <i class="fas fa-code"></i>
+              Skills
+            </button>
+            <button class="tab-btn" data-tab="education">
+              <i class="fas fa-graduation-cap"></i>
+              Education
+            </button>
+          </div>
+          
+          <div class="tab-content">
+            <div class="tab-panel active" id="skills-panel">
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <h3>Programming Languages</h3>
+                  <div class="skill-list">
+                    <div class="skill-item">
+                      <div class="skill-info">
+                        <span class="skill-name">C / C++</span>
+                        <span class="skill-percentage">85%</span>
+                      </div>
+                      <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-info">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-percentage">80%</span>
+                      </div>
+                      <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="skill-category">
+                  <h3>Web Technologies</h3>
+                  <div class="skill-list">
+                    <div class="skill-item">
+                      <div class="skill-info">
+                        <span class="skill-name">HTML / CSS</span>
+                        <span class="skill-percentage">90%</span>
+                      </div>
+                      <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-info">
+                        <span class="skill-name">jQuery</span>
+                        <span class="skill-percentage">75%</span>
+                      </div>
+                      <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="skill-category">
+                  <h3>Design Tools</h3>
+                  <div class="skill-list">
+                    <div class="skill-item">
+                      <div class="skill-info">
+                        <span class="skill-name">Figma</span>
+                        <span class="skill-percentage">85%</span>
+                      </div>
+                      <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-info">
+                        <span class="skill-name">Canva</span>
+                        <span class="skill-percentage">80%</span>
+                      </div>
+                      <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-panel" id="education-panel">
+              <div class="education-timeline">
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3>B.Tech in Computer Science Engineering</h3>
+                    <p class="institution">National Institute of Technology, Patna</p>
+                    <p class="duration">2021 - Present</p>
+                    <p class="description">Currently pursuing Bachelor's degree with focus on software development, algorithms, and system design.</p>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3>12th Grade - Science Stream</h3>
+                    <p class="institution">Tulsi Public School, Ambala</p>
+                    <p class="duration">2020 - 2021</p>
+                    <p class="description">Completed higher secondary education with Physics, Chemistry, and Mathematics.</p>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3>10th Grade</h3>
+                    <p class="institution">Sohan Lal DAV Secondary School, Ambala</p>
+                    <p class="duration">2018 - 2019</p>
+                    <p class="description">Completed secondary education with strong foundation in mathematics and science.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Projects</h2>
+          <div class="section-line"></div>
+          <p class="section-subtitle">A showcase of my recent work and personal projects</p>
+        </div>
+        
+        <div class="projects-grid">
+          <div class="project-card" data-category="cpp">
+            <div class="project-image">
+              <div class="project-icon">
+                <i class="fas fa-gamepad"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Number Guessing Game</h3>
+              <p class="project-description">Interactive console-based game built with C++ featuring random number generation and user input validation.</p>
+              <div class="project-tags">
+                <span class="tag">C++</span>
+                <span class="tag">Console</span>
+                <span class="tag">Gaming</span>
+              </div>
+              <div class="project-links">
+                <button class="btn-link" onclick="openProjectModal('number-guessing')">
+                  <i class="fas fa-eye"></i>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="cpp">
+            <div class="project-image">
+              <div class="project-icon">
+                <i class="fas fa-hand-rock"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Snake Water Gun Game</h3>
+              <p class="project-description">Classic rock-paper-scissors variant implemented in C++ with computer AI and score tracking system.</p>
+              <div class="project-tags">
+                <span class="tag">C++</span>
+                <span class="tag">AI</span>
+                <span class="tag">Gaming</span>
+              </div>
+              <div class="project-links">
+                <button class="btn-link" onclick="openProjectModal('snake-water-gun')">
+                  <i class="fas fa-eye"></i>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="cpp">
+            <div class="project-image">
+              <div class="project-icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Student Management System</h3>
+              <p class="project-description">Comprehensive system for managing student records and grades with data persistence and search functionality.</p>
+              <div class="project-tags">
+                <span class="tag">C++</span>
+                <span class="tag">Data Management</span>
+                <span class="tag">File I/O</span>
+              </div>
+              <div class="project-links">
+                <button class="btn-link" onclick="openProjectModal('student-management')">
+                  <i class="fas fa-eye"></i>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="design">
+            <div class="project-image">
+              <div class="project-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">SuperStock - UI Design</h3>
+              <p class="project-description">Modern mobile app UI design for stock trading platform with intuitive user experience and clean interface.</p>
+              <div class="project-tags">
+                <span class="tag">UI/UX</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Mobile Design</span>
+              </div>
+              <div class="project-links">
+                <button class="btn-link" onclick="openProjectModal('superstock')">
+                  <i class="fas fa-eye"></i>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <div class="project-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Personal Portfolio Website</h3>
+              <p class="project-description">Responsive portfolio website showcasing my work and skills with modern design and smooth animations.</p>
+              <div class="project-tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <div class="project-links">
+                <button class="btn-link" onclick="openProjectModal('portfolio')">
+                  <i class="fas fa-eye"></i>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="section-line"></div>
+          <p class="section-subtitle">Let's discuss your next project or collaboration opportunity</p>
+        </div>
+        
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p>harsh2021800@example.com</p>
+              </div>
+            </div>
+            
+            <!-- <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <p>+91 87080 20094</p>
+              </div>
+            </div> -->
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>Ambala, Haryana, India</p>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <a href="https://github.com/Harsh-Kapadiya" class="social-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/harsh-kapadiya-0a25b1325?" class="social-link">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/harsh._kapadiya?igsh=aTBzYnV2OWd2dmt0" class="social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="hhttps://x.com/Harsh2021800" class="social-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="contact-form-container">
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <div class="field-error" id="name-error"></div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <div class="field-error" id="email-error"></div>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+                <div class="field-error" id="subject-error"></div>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <div class="field-error" id="message-error"></div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading">
+                  <i class="fas fa-spinner fa-spin"></i>
+                  Sending...
+                </span>
+              </button>
+            </form>
+            
+            <div class="form-success" id="form-success">
+              <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <h3>Message Sent!</h3>
+              <p>Thank you for reaching out. I'll get back to you soon!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Harsh Kapadiya</h3>
+          <p>Crafting pixels into purpose.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <div class="footer-social">
+            <a href="https://github.com/Harsh-Kapadiya"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/harsh-kapadiya-0a25b1325?"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/harsh._kapadiya?igsh=aTBzYnV2OWd2dmt0"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/Harsh2021800"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Harsh Kapadiya. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div class="modal" id="project-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-title">Project Title</h2>
+        <button class="modal-close" id="modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Project details will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+</body>
+</html>
