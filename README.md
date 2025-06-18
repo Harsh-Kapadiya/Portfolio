@@ -102,4 +102,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
+<<<<<<< HEAD
 Made with ❤️ by Harsh Kapadiya
+=======
+Made with ❤️ by Harsh Kapadiya
+>>>>>>> 5f1469b0bd5eb8e31c83f760df68bcb5a4a38fc0
