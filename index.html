@@ -513,27 +513,27 @@
           </div>
           
           <div class="contact-form-container">
-            <form class="contact-form" id="contact-form">
+            <form class="contact-form" id="contact-form" action = "form.php" method="POST">
               <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name" id = "name">Name</label>
                 <input type="text" id="name" name="name" required>
                 <div class="field-error" id="name-error"></div>
               </div>
               
               <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email" id = "email">Email</label>
                 <input type="email" id="email" name="email" required>
                 <div class="field-error" id="email-error"></div>
               </div>
               
               <div class="form-group">
-                <label for="subject">Subject</label>
+                <label for="subject" id = "subject">Subject</label>
                 <input type="text" id="subject" name="subject" required>
                 <div class="field-error" id="subject-error"></div>
               </div>
               
               <div class="form-group">
-                <label for="message">Message</label>
+                <label for="message" id = "message">Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
                 <div class="field-error" id="message-error"></div>
               </div>
