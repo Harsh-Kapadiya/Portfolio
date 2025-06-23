@@ -1,65 +1,80 @@
 <?php
-require 'vendor/autoload.php'; // MongoDB library
+// ✅ Show PHP errors (for debugging)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-// MongoDB client connection string
-$client = new MongoDB\Client("mongodb+srv://harsh2021800:LJPLjEB4VcSggeTT@cluster0.azxejgs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+// ✅ Load Composer dependencies (PHPMailer)
+require 'vendor/autoload.php';
 
-// Select the database and collection
-$collection = $client->Harsh->portfolio;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// Initialize variables
 $errors = [];
 $successMsg = "";
 
-// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Check if it's a registration or login request
-    if (isset($_POST['register'])) {
-        // Registration logic
-        $name = trim($_POST['name']);
-        $email = trim($_POST['email']);
-        $subject = trim($_POST['subject']);
-        $message = trim($_POST['message']);
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $subject = trim($_POST['subject'] ?? '');
+    $message = trim($_POST['message'] ?? '');
 
-        // Validate name
-        if (empty($name)) {
-            $errors[] = "Name is required.";
-        }
+    if (empty($name)) $errors[] = "Name is required.";
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Valid email is required.";
+    if (empty($subject)) $errors[] = "Subject is required.";
+    if (empty($message)) $errors[] = "Message is required.";
 
-        // Validate email
-        if (empty($email)) {
-            $errors[] = "Email is required.";
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Invalid email format.";
-        }
+    if (empty($errors)) {
+        $mail = new PHPMailer(true);
 
-        // Validate subject
-        if (empty($subject)) {
-            $errors[] = "Subject is required.";
-        }
+        try {
+            // ✅ SMTP Config (Gmail)
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'harsh2021800@gmail.com';       // Your Gmail
+            $mail->Password   = 'hnrfuosgyudhpeoo';              // Gmail App Password
+            $mail->SMTPSecure = 'tls';
+            $mail->Port       = 587;
 
-        // Validate message
-        if (empty($message)) {
-            $errors[] = "Message is required.";
-        }
+            // ✅ Email settings
+            $mail->setFrom('harsh2021800@gmail.com', 'Portfolio Contact');
+            $mail->addAddress('harsh2021800@gmail.com');
 
-        // If no validation errors, insert the data into MongoDB
-        if (empty($errors)) {
-        $insertResult = $collection->insertOne([
-            'name' => $name,
-            'email' => $email,
-            'subject' => $subject,
-            'message' => $message
-        ]);
+            $mail->isHTML(true);
+            $mail->Subject = 'New Message from Portfolio';
+            $mail->Body    = "
+                <h3>New Form Submission</h3>
+                <p><strong>Name:</strong> {$name}</p>
+                <p><strong>Email:</strong> {$email}</p>
+                <p><strong>Subject:</strong> {$subject}</p>
+                <p><strong>Message:</strong><br>{$message}</p>
+            ";
 
-        if ($insertResult->getInsertedCount() > 0) {
-            $successMsg = "Message sent successfully!";
-        } else {
-            $errors[] = "Failed to save your message. Please try again.";
+            if ($mail->send()) {
+                $successMsg = "✅ Your message has been sent successfully!";
+            } else {
+                $errors[] = "❌ Mail Error: " . $mail->ErrorInfo;
+            }
+        } catch (Exception $e) {
+            $errors[] = "❌ PHPMailer Error: " . $mail->ErrorInfo;
         }
     }
-    } 
 }
-
-
 ?>
+
+<!-- ✅ Output the result -->
+<?php if (!empty($errors)): ?>
+    <div style="color: red; padding: 10px;">
+        <strong>Error(s):</strong>
+        <ul>
+            <?php foreach ($errors as $error): ?>
+                <li><?= htmlspecialchars($error) ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php elseif ($successMsg): ?>
+    <div style="color: green; padding: 10px;">
+        <?= htmlspecialchars($successMsg) ?>
+    </div>
+<?php endif; ?>
