@@ -725,3 +725,6 @@ window.openProjectModal = function(projectId) {
 document.addEventListener('DOMContentLoaded', () => {
   new PortfolioApp();
 });
+
+
+
